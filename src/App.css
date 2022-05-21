@@ -24,15 +24,22 @@ header {
     gap: 1rem;
 }
 
-.form--input, .form--button {
-    border-radius: 0.2rem;
-}
-
 .form--input {
+    border-radius: 0.2rem;
+    border: 1px solid hsla(255, 5%, 84%, 1);
     text-indent: 1rem;
 }
 
 .form--button {
+    border-radius: 0.2rem;
     grid-column: 1 / -1;
     background: hsla(216, 72%, 59%, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.meme {
+    justify-content: center;
+    align-items: center;
 }
