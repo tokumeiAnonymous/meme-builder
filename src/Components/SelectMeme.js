@@ -7,14 +7,16 @@ export default function SelectMeme({allMemes, selectImage}) {
     ))
 
     function selectAndCloseModal(id) {
-        const selection = document.querySelector('.select');
+        const selection = document.querySelector('dialog');
         selection.close();
         selectImage(id);
     }
 
   return (
-    <dialog className='select'>
-        {memeList}
+    <dialog>
+        <div className="select">
+            {memeList}
+        </div>
     </dialog>
   )
 }

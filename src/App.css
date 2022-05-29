@@ -37,6 +37,25 @@ main {
     text-indent: 1rem;
 }
 
+.form--add--button {
+    font-size: 2rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
+    border: solid 1px hsla(255, 5%, 84%, 1);
+    background-color:hsla(216, 72%, 59%, 0.4);
+}
+
+.remove-button {
+    border-radius: 5px;
+    border: solid 1px hsla(255, 5%, 84%, 1);
+    background-color:hsla(216, 72%, 59%, 0.4);
+}
+
+.form--add--button:hover, .remove-button:hover {
+    background-color:hsla(216, 72%, 59%, 0.6);
+}
+
 .form--button {
     border-radius: 0.2rem;
     grid-column: 1 / -1;
@@ -51,18 +70,17 @@ main {
     border: 1px solid hsla(255, 5%, 84%, 1);
 }
 
-.meme {
-    width: 50%;
-}
-
-/* .select {
-    display: none;
-    position: absolute;
-    opacity: 0;
-    margin: auto;
-}
-
-.selecting {
+.select {
     display: flex;
-    opacity: 100;
-} */
+    flex-direction: column;
+}
+
+.meme {
+    border: 1px solid black;
+}
+
+.text-box {
+    font-size: 3rem;
+    width: fit-content;
+    padding: 0.5rem;
+}
