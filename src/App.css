@@ -15,11 +15,18 @@ header {
     background: linear-gradient(90deg, hsla(202, 42%, 58%, 1), hsla(212, 79%, 52%, 1));
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .form {
     display: grid;
     padding: 1rem;
     justify-content: center;
-    grid-template-columns: 30% 30%;
+    grid-template-columns: 30vw 30vw;
     grid-template-rows: 2.5rem 2.5rem;
     gap: 1rem;
 }
@@ -33,13 +40,29 @@ header {
 .form--button {
     border-radius: 0.2rem;
     grid-column: 1 / -1;
-    background: hsla(216, 72%, 59%, 1);
+    background-color: hsla(216, 72%, 59%, 0.8);
     color: white;
     border: none;
     cursor: pointer;
 }
 
-.meme {
-    justify-content: center;
-    align-items: center;
+.form--button:hover {
+    background-color: hsla(216, 72%, 59%, 1);
+    border: 1px solid hsla(255, 5%, 84%, 1);
 }
+
+.meme {
+    width: 50%;
+}
+
+/* .select {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    margin: auto;
+}
+
+.selecting {
+    display: flex;
+    opacity: 100;
+} */

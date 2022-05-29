@@ -1,19 +1,36 @@
-import memesData from '../Data/memesData';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import SelectMeme from './SelectMeme';
 
 export default function Form() {
 
-    const { memes } = memesData.data;
-    const [image, setImage] = useState('');
+    const [allMemes, setAllMemes] = useState([]);
+    const [meme, setMeme] = useState('');
 
-    function getMemeImage(event) {
-        event.preventDefault();
-        const random = getRandomInt(memes.length);
-        setImage(memes[random].url);
+    useEffect( () => {
+        async function getAllMemes () {
+            try {
+                const data = await fetch('https://api.imgflip.com/get_memes');
+                const res = await data.json();
+                setAllMemes(res.data.memes);
+            }
+            catch (error) {
+                console.log(error);
+            }
+
+        }
+        getAllMemes();
+    }, [allMemes])
+
+    function selectImage(id) {
+        allMemes.forEach( meme => {
+            if (meme.id === id) setMeme(meme);
+        })
     }
 
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
+    function showSelection( event ) {
+        event.preventDefault();
+        const selection = document.querySelector('.select');
+        selection.showModal();
     }
 
     return(
@@ -29,11 +46,12 @@ export default function Form() {
                 className="form--input" />
 
                 <button className="form--button"
-                onClick={(event) => getMemeImage(event)} > 
+                onClick={showSelection} > 
                     Get new meme template 
                 </button>
             </form>
-            <img className="meme" src={image}></img>
+            <img className="meme" src={meme.url} alt="Meme Template"></img>
+            <SelectMeme allMemes={allMemes} selectImage={selectImage}/>
         </main>
     )
 }
