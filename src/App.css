@@ -43,13 +43,18 @@ header {
 .remove-button {
     border-radius: 5px;
     border: solid 1px hsla(255, 5%, 84%, 1);
-    background-color:hsla(216, 72%, 59%, 0.4);
     opacity: 0;
 }
 
-.form--add--button:hover, .remove-button:hover {
+.form--add--button:hover {
     background-color:hsla(216, 72%, 59%, 0.6);
-    opacity: 100%;
+}
+
+.remove-button:hover {
+    background-color:hsla(24, 72%, 59%, 1);
+    border: 1px solid yellow;
+    scale: 1.5;
+    opacity: 100;
 }
 
 .form--button {
@@ -85,6 +90,12 @@ header {
     margin-right: auto;
     padding: 0.5rem;
     text-align: center;
+    color: white;
+    color: white;
+	text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000,
+				-1px -1px 0 #000;
 }
 
 .meme-wrapper {
