@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+
 }
 
 body {
@@ -43,10 +44,12 @@ header {
     border-radius: 5px;
     border: solid 1px hsla(255, 5%, 84%, 1);
     background-color:hsla(216, 72%, 59%, 0.4);
+    opacity: 0;
 }
 
 .form--add--button:hover, .remove-button:hover {
     background-color:hsla(216, 72%, 59%, 0.6);
+    opacity: 100%;
 }
 
 .form--button {
@@ -69,19 +72,22 @@ header {
 }
 
 .meme-wrapper {
-    display: relative;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-}
-
-.meme {
     border: 1px solid black;
-    display: absolute;
 }
 
 .text-box {
     font-size: 3rem;
     width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0.5rem;
+    text-align: center;
+}
+
+.meme-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
