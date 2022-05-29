@@ -15,13 +15,6 @@ header {
     background: linear-gradient(90deg, hsla(202, 42%, 58%, 1), hsla(212, 79%, 52%, 1));
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .form {
     display: grid;
     padding: 1rem;
@@ -75,8 +68,16 @@ main {
     flex-direction: column;
 }
 
+.meme-wrapper {
+    display: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .meme {
     border: 1px solid black;
+    display: absolute;
 }
 
 .text-box {

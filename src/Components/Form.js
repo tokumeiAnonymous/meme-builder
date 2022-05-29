@@ -54,7 +54,7 @@ export default function Form() {
     }
 
     const textBoxList = textBox.map( (text, i) => (
-        <TextBox key={i} text={text} remove={removeTextBox}/>
+        <TextBox key={i} dataKey={i} text={text} remove={removeTextBox}/>
     ))
 
     return(
@@ -73,9 +73,14 @@ export default function Form() {
                     Get new meme template 
                 </button>
             </form>
-            <div className="meme-wrapper">
+            <div className="meme-wrapper" 
+            style={{
+                backgroundImage: `url(${meme.url})`,
+                width: meme.width,
+                height: meme.height
+            }}>
                 {textBoxList}
-                <img className="meme" src={meme.url} alt="Meme Template" />
+                {/* <img className="meme" src={meme.url} alt="Meme Template" /> */}
             </div>
             <SelectMeme allMemes={allMemes} selectImage={selectImage}/>
         </main>
